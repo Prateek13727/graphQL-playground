@@ -1,0 +1,30 @@
+//postgres commands
+
+\conninfo | verify connection
+\q | Exit psql connection
+\c | Connect to a new database
+\dt | List all tables
+\du | List all roles
+\list | List databases
+
+//login as postgres user
+psql -d postgres -U postgres
+
+//logging in as a custom user
+psql -d postgres -U me
+
+//logging in the root shell
+ sudo -i
+
+//adding postgres user to the sudo groups
+sudo usermod -a -G sudo postgres
+
+//restart postges
+sudo service postgresql restart
+
+//creating a new user
+CREATE ROLE me WITH LOGIN PASSWORD 'password';
+
+//create a new database and connect to the dataase as a custom user
+CREATE DATABASE api;
+\c api 
